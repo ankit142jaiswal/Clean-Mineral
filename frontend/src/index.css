@@ -1,0 +1,250 @@
+main {
+  min-height: 80vh;
+  background: linear-gradient(135deg, #e6f7ff 0%, #b3e0ff 50%, #80ccff 100%);
+  position: relative;
+}
+
+main::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="8" fill="%23ffffff" opacity="0.1" font-family="Arial, sans-serif" font-weight="bold">CLEAN</text></svg>'),
+    radial-gradient(circle at 20% 80%, rgba(26, 117, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(26, 117, 255, 0.1) 0%, transparent 50%);
+  background-size: 200px 200px, 300px 300px, 300px 300px;
+  background-repeat: repeat, no-repeat, no-repeat;
+  z-index: -1;
+  pointer-events: none;
+}
+
+h3 {
+  padding: 1rem 0;
+}
+
+h1 {
+  font-size: 1.8rem;
+  padding: 1rem 0;
+}
+
+h2 {
+  font-size: 1.4rem;
+  padding: 0.5rem 0;
+}
+
+/* carousel */
+.carousel-item-next,
+.carousel-item-prev,
+.carousel-item.active {
+  display: flex;
+}
+.carousel-caption {
+  position: absolute;
+  top: 0;
+}
+
+.carousel-caption h2 {
+  color: #fff;
+}
+
+.carousel img {
+  height: 300px;
+  padding: 30px;
+  margin: 40px;
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.carousel a {
+  margin: 0 auto;
+}
+@media (max-width: 900px) {
+  .carousel-caption h2 {
+    font-size: 2.5vw;
+  }
+}
+
+/* Header */
+.navbar {
+  background-color: #1a75ff !important;
+}
+
+.navbar-brand, .nav-link {
+  color: white !important;
+}
+
+/* Water theme */
+.btn-primary {
+  background-color: #1a75ff !important;
+  border-color: #1a75ff !important;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3 !important;
+  border-color: #0056b3 !important;
+}
+
+.product-card {
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-image {
+  height: 200px;
+  object-fit: contain;
+}
+
+.water-bg {
+  background: linear-gradient(135deg, #e6f7ff 0%, #cce7ff 100%);
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(26, 117, 255, 0.1);
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(26, 117, 255, 0.1);
+}
+
+.form-control {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(26, 117, 255, 0.3);
+}
+
+.form-control:focus {
+  background: rgba(255, 255, 255, 1);
+  border-color: #1a75ff;
+  box-shadow: 0 0 0 0.2rem rgba(26, 117, 255, 0.25);
+}
+
+.navbar .dropdown-menu {
+  z-index: 99999 !important;
+  position: absolute !important;
+}
+
+.navbar .dropdown {
+  z-index: 99999 !important;
+}
+
+/* Reduce loader timing */
+.spinner-border {
+  animation-duration: 0.5s !important;
+}
+
+.fade {
+  transition: opacity 0.1s !important;
+}
+
+/* Product details page transparency */
+.list-group-item {
+  background-color: transparent !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Payment method transparent boxes */
+.form-check {
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 10px !important;
+  padding: 15px !important;
+  margin: 10px 0 !important;
+  transition: all 0.3s ease !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.form-check:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+  transform: translateY(-2px) !important;
+}
+
+.form-check-input {
+  margin-right: 10px !important;
+  margin-top: 0 !important;
+}
+
+.form-check-label {
+  margin-bottom: 0 !important;
+  cursor: pointer !important;
+}
+
+/* Shipping form transparent container */
+.shipping-form-container {
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 15px !important;
+  padding: 30px !important;
+  margin: 20px 0 !important;
+}
+
+/* Payment methods container */
+.payment-methods-container {
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 15px !important;
+  padding: 30px !important;
+  margin: 20px 0 !important;
+}
+
+/* Checkout steps styling */
+.current-step {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border-radius: 5px !important;
+  padding: 8px 16px !important;
+}
+
+/* Order details transparent container */
+.order-details-container {
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 15px !important;
+  padding: 30px !important;
+  margin: 20px 0 !important;
+}
+
+/* Individual order item boxes */
+.order-item-box {
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 10px !important;
+  padding: 15px !important;
+  margin: 10px 0 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+.order-details-container p {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+  padding-bottom: 10px !important;
+  margin-bottom: 15px !important;
+}
+
+.order-details-container p:last-child {
+  border-bottom: none !important;
+}
