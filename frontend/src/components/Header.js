@@ -30,7 +30,7 @@ const Header = () => {
             },
           };
 
-          const { data } = await axios.get('https://clean-trwd.onrender.com/api/orders', config);
+          const { data } = await axios.get('https://clean-mineral.onrender.com/api/orders', config);
           
           // Sort by createdAt date (newest first)
           const sortedNotifications = data.sort(

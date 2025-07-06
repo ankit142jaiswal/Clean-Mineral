@@ -69,7 +69,10 @@ const OrderScreen = () => {
     <Message variant='danger'>{error}</Message>
   ) : (
     <>
-      <h1>Order {order._id}</h1>
+      <div>
+        <h2>Order Number</h2>
+        <h2>#{order._id}</h2>
+      </div>
       <Row>
         <Col md={8}>
           <div className='order-details-container'>
