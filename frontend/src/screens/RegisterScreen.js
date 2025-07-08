@@ -44,11 +44,12 @@ const RegisterScreen = () => {
 
   return (
     <FormContainer>
-      <h1>Sign Up</h1>
-      {message && <Message variant='danger'>{message}</Message>}
-      {error && <Message variant='danger'>{error}</Message>}
-      {loading && <Loader />}
-      <Form onSubmit={submitHandler}>
+      <div className='p-5 rounded-3 shadow-sm' style={{ backgroundColor: 'rgba(255, 255, 255, 0.8)' }}>
+        <h1>Sign Up</h1>
+        {message && <Message variant='danger'>{message}</Message>}
+        {error && <Message variant='danger'>{error}</Message>}
+        {loading && <Loader />}
+        <Form onSubmit={submitHandler}>
         <Form.Group controlId='name'>
           <Form.Label>Name</Form.Label>
           <Form.Control
@@ -112,19 +113,20 @@ const RegisterScreen = () => {
           </Form.Group>
         )}
 
-        <Button type='submit' variant='primary' className='mt-3'>
-          Register
-        </Button>
-      </Form>
+          <Button type='submit' variant='primary' className='mt-3'>
+            Register
+          </Button>
+        </Form>
 
-      <Row className='py-3'>
-        <Col>
-          Have an Account?{' '}
-          <Link to={redirect ? `/login?redirect=${redirect}` : '/login'}>
-            Login
-          </Link>
-        </Col>
-      </Row>
+        <Row className='py-3'>
+          <Col>
+            Have an Account?{' '}
+            <Link to={redirect ? `/login?redirect=${redirect}` : '/login'}>
+              Login
+            </Link>
+          </Col>
+        </Row>
+      </div>
     </FormContainer>
   );
 };

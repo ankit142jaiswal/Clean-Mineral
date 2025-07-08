@@ -30,7 +30,7 @@ const Header = () => {
             },
           };
 
-          const { data } = await axios.get('https://clean-trwd.onrender.com/api/orders', config);
+          const { data } = await axios.get('https://clean-mineral.onrender.com/api/orders', config);
           
           // Sort by createdAt date (newest first)
           const sortedNotifications = data.sort(
@@ -69,8 +69,8 @@ const Header = () => {
 
   return (
     <header>
-      <Navbar expand='lg' collapseOnSelect>
-        <Container>
+      <Navbar expand='lg' collapseOnSelect className='py-2'>
+        <Container fluid className='px-4' style={{ maxWidth: '1200px' }}>
           <LinkContainer to='/'>
             <Navbar.Brand>
               <FaTint className='mr-2' style={{ color: '#ffffff' }} /> <strong>Clean</strong>

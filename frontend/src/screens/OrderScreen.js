@@ -69,10 +69,13 @@ const OrderScreen = () => {
     <Message variant='danger'>{error}</Message>
   ) : (
     <>
-      <h1>Order {order._id}</h1>
+      <div>
+        <h2>Order Number</h2>
+        <h2>#{order._id}</h2>
+      </div>
       <Row>
         <Col md={8}>
-          <div className='order-details-container'>
+          <div className='p-4 rounded-3 shadow-sm mb-4' style={{ backgroundColor: 'rgba(255, 255, 255, 0.8)' }}>
             <h2>Shipping</h2>
             <p><strong>Name:</strong> {order.user.name}</p>
             <p><strong>Email:</strong> <a href={`mailto:${order.user.email}`}>{order.user.email}</a></p>
@@ -84,7 +87,7 @@ const OrderScreen = () => {
             )}
           </div>
           
-          <div className='order-details-container'>
+          <div className='p-4 rounded-3 shadow-sm mb-4' style={{ backgroundColor: 'rgba(255, 255, 255, 0.8)' }}>
             <h2>Payment Method</h2>
             <p><strong>Method:</strong> {order.paymentMethod}</p>
             {order.isPaid ? (
@@ -94,13 +97,13 @@ const OrderScreen = () => {
             )}
           </div>
           
-          <div className='order-details-container'>
+          <div className='p-4 rounded-3 shadow-sm' style={{ backgroundColor: 'rgba(255, 255, 255, 0.8)' }}>
             <h2>Order Items</h2>
             {order.orderItems.length === 0 ? (
               <Message>Order is empty</Message>
             ) : (
               order.orderItems.map((item, index) => (
-                <div key={index} className='order-item-box'>
+                <div key={index} className='p-3 mb-3 rounded-3 border' style={{ backgroundColor: 'rgba(255, 255, 255, 0.5)' }}>
                   <Row>
                     <Col md={2}>
                       <Image src={item.image} alt={item.name} fluid rounded />
@@ -118,7 +121,7 @@ const OrderScreen = () => {
           </div>
         </Col>
         <Col md={4}>
-          <Card>
+          <Card className='rounded-3 shadow-sm p-3'>
             <ListGroup variant='flush'>
               <ListGroup.Item>
                 <h2>Order Summary</h2>

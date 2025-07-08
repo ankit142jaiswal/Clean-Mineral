@@ -33,10 +33,11 @@ const LoginScreen = () => {
 
   return (
     <FormContainer>
-      <h1>Sign In</h1>
-      {error && <Message variant='danger'>{error}</Message>}
-      {loading && <Loader />}
-      <Form onSubmit={submitHandler}>
+      <div className='p-5 rounded-3 shadow-sm' style={{ backgroundColor: 'rgba(255, 255, 255, 0.8)' }}>
+        <h1>Sign In</h1>
+        {error && <Message variant='danger'>{error}</Message>}
+        {loading && <Loader />}
+        <Form onSubmit={submitHandler}>
         <Form.Group controlId='email'>
           <Form.Label>Email Address</Form.Label>
           <Form.Control
@@ -59,19 +60,20 @@ const LoginScreen = () => {
 
 
 
-        <Button type='submit' variant='primary' className='mt-3'>
-          Sign In
-        </Button>
-      </Form>
+          <Button type='submit' variant='primary' className='mt-3'>
+            Sign In
+          </Button>
+        </Form>
 
-      <Row className='py-3'>
-        <Col>
-          New Customer?{' '}
-          <Link to={redirect ? `/register?redirect=${redirect}` : '/register'}>
-            Register
-          </Link>
-        </Col>
-      </Row>
+        <Row className='py-3'>
+          <Col>
+            New Customer?{' '}
+            <Link to={redirect ? `/register?redirect=${redirect}` : '/register'}>
+              Register
+            </Link>
+          </Col>
+        </Row>
+      </div>
     </FormContainer>
   );
 };

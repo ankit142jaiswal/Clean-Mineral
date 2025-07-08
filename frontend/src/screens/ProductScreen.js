@@ -43,20 +43,29 @@ const ProductScreen = () => {
       ) : (
         <Row>
           <Col md={6}>
-            <Image src={product.image} alt={product.name} fluid />
+            <Image 
+              src={product.image?.startsWith('http') ? product.image : `https://clean-mineral.onrender.com${product.image}`} 
+              alt={product.name} 
+              fluid 
+              onError={(e) => {
+                e.target.src = '/images/sample.png';
+              }}
+            />
           </Col>
           <Col md={3}>
-            <ListGroup variant='flush'>
+            <div className='p-2 bg-white rounded-3 shadow-sm'>
+              <ListGroup variant='flush'>
               <ListGroup.Item>
                 <h3>{product.name}</h3>
               </ListGroup.Item>
 
               <ListGroup.Item>Price: ₹{product.price}</ListGroup.Item>
               <ListGroup.Item>Description: {product.description}</ListGroup.Item>
-            </ListGroup>
+              </ListGroup>
+            </div>
           </Col>
           <Col md={3}>
-            <Card>
+            <Card className='p-2 rounded-3 shadow-sm'>
               <ListGroup variant='flush'>
                 <ListGroup.Item>
                   <Row>

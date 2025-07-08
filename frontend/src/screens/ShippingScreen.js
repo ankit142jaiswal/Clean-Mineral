@@ -33,7 +33,7 @@ const ShippingScreen = () => {
     <FormContainer>
       <CheckoutSteps step1 currentStep={1} />
       <h1>Shipping</h1>
-      <div className='shipping-form-container'>
+      <div className='p-5 rounded-3 shadow-sm' style={{ backgroundColor: 'rgba(255, 255, 255, 0.8)' }}>
         <Form onSubmit={submitHandler}>
           <Form.Group controlId='address'>
             <Form.Label>Address</Form.Label>

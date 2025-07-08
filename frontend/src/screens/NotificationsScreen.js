@@ -44,7 +44,7 @@ const NotificationsScreen = () => {
         };
 
         // Get recent orders as notifications
-        const { data } = await axios.get('https://clean-trwd.onrender.com/api/orders', config);
+        const { data } = await axios.get('https://clean-mineral.onrender.com/api/orders', config);
         
         // Sort by createdAt date (newest first);l
         const sortedNotifications = data.sort(
@@ -120,7 +120,7 @@ const NotificationsScreen = () => {
                   <tr key={notification._id}>
                     <td>{new Date(notification.createdAt).toLocaleDateString()}</td>
                     <td>{notification.user?.name || 'Unknown User'}</td>
-                    <td>${notification.totalPrice}</td>
+                    <td>₹{notification.totalPrice}</td>
                     <td>
                       New order placed by {notification.user?.name || 'Unknown User'}
                     </td>

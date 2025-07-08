@@ -8,14 +8,14 @@ import {
 } from '../constants/cartConstants';
 
 export const addToCart = (id, qty) => async (dispatch, getState) => {
-  const { data } = await axios.get(`https://clean-trwd.onrender.com/api/products/${id}`);
+  const { data } = await axios.get(`https://clean-mineral.onrender.com/api/products/${id}`);
 
   dispatch({
     type: CART_ADD_ITEM,
     payload: {
       product: data._id,
       name: data.name,
-      image: data.image,
+      image: data.image ,
       price: data.price,
       countInStock: data.countInStock,
       volume: data.volume || 1, // Add volume field with default value

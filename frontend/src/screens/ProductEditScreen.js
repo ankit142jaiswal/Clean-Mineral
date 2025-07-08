@@ -85,15 +85,16 @@ const ProductEditScreen = () => {
         Go Back
       </Link>
       <FormContainer>
-        <h1>Edit Product</h1>
-        {loadingUpdate && <Loader />}
-        {errorUpdate && <Message variant='danger'>{errorUpdate}</Message>}
-        {loading ? (
-          <Loader />
-        ) : error ? (
-          <Message variant='danger'>{error}</Message>
-        ) : (
-          <Form onSubmit={submitHandler}>
+        <div className='p-5 rounded-3 shadow-sm' style={{ backgroundColor: 'rgba(255, 255, 255, 0.8)' }}>
+          <h1>Edit Product</h1>
+          {loadingUpdate && <Loader />}
+          {errorUpdate && <Message variant='danger'>{errorUpdate}</Message>}
+          {loading ? (
+            <Loader />
+          ) : error ? (
+            <Message variant='danger'>{error}</Message>
+          ) : (
+            <Form onSubmit={submitHandler}>
             <Form.Group controlId='name'>
               <Form.Label>Name</Form.Label>
               <Form.Control
@@ -171,10 +172,10 @@ const ProductEditScreen = () => {
             </Form.Group>
 
             <Form.Group controlId='volume'>
-              <Form.Label>Volume (Liters)</Form.Label>
+              <Form.Label>Volume (Units)</Form.Label>
               <Form.Control
                 type='number'
-                placeholder='Enter volume in liters'
+                placeholder='Enter volume in units'
                 value={volume}
                 onChange={(e) => setVolume(e.target.value)}
               ></Form.Control>
@@ -190,11 +191,12 @@ const ProductEditScreen = () => {
               ></Form.Control>
             </Form.Group>
 
-            <Button type='submit' variant='primary' className='mt-3'>
-              Save
-            </Button>
-          </Form>
-        )}
+              <Button type='submit' variant='primary' className='mt-3'>
+                Save
+              </Button>
+            </Form>
+          )}
+        </div>
       </FormContainer>
     </>
   );

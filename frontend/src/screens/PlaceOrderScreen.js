@@ -56,7 +56,7 @@ const PlaceOrderScreen = () => {
       <CheckoutSteps step1 step2 step3 currentStep={3} />
       <Row>
         <Col md={8}>
-          <div className='order-details-container'>
+          <div className='p-4 rounded-3 shadow-sm mb-4' style={{ backgroundColor: 'rgba(255, 255, 255, 0.8)' }}>
             <h2>Shipping Address</h2>
             <p>
               {cart.shippingAddress.address}, {cart.shippingAddress.city}{' '}
@@ -65,18 +65,18 @@ const PlaceOrderScreen = () => {
             </p>
           </div>
           
-          <div className='order-details-container'>
+          <div className='p-4 rounded-3 shadow-sm mb-4' style={{ backgroundColor: 'rgba(255, 255, 255, 0.8)' }}>
             <h2>Payment Method</h2>
             <p>{cart.paymentMethod}</p>
           </div>
           
-          <div className='order-details-container'>
+          <div className='p-4 rounded-3 shadow-sm' style={{ backgroundColor: 'rgba(255, 255, 255, 0.8)' }}>
             <h2>Order Items</h2>
             {cart.cartItems.length === 0 ? (
               <Message>Your cart is empty</Message>
             ) : (
               cart.cartItems.map((item, index) => (
-                <div key={index} className='order-item-box'>
+                <div key={index} className='p-3 mb-3 rounded-3 border' style={{ backgroundColor: 'rgba(255, 255, 255, 0.5)' }}>
                   <Row>
                     <Col md={2}>
                       <Image
@@ -101,7 +101,7 @@ const PlaceOrderScreen = () => {
           </div>
         </Col>
         <Col md={4}>
-          <Card>
+          <Card className='rounded-3 shadow-sm p-3' >
             <ListGroup variant='flush'>
               <ListGroup.Item>
                 <h2>Order Summary</h2>

@@ -21,7 +21,7 @@ export const listProducts = () => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_LIST_REQUEST });
 
-    const { data } = await axios.get('https://clean-trwd.onrender.com/api/products');
+    const { data } = await axios.get('https://clean-mineral.onrender.com/api/products');
 
     dispatch({
       type: PRODUCT_LIST_SUCCESS,
@@ -42,7 +42,7 @@ export const listProductDetails = (id) => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_DETAILS_REQUEST });
 
-    const { data } = await axios.get(`https://clean-trwd.onrender.com/api/products/${id}`);
+    const { data } = await axios.get(`https://clean-mineral.onrender.com/api/products/${id}`);
 
     dispatch({
       type: PRODUCT_DETAILS_SUCCESS,
@@ -75,7 +75,7 @@ export const deleteProduct = (id) => async (dispatch, getState) => {
       },
     };
 
-    await axios.delete(`https://clean-trwd.onrender.com/api/products/${id}`, config);
+    await axios.delete(`https://clean-mineral.onrender.com/api/products/${id}`, config);
 
     dispatch({
       type: PRODUCT_DELETE_SUCCESS,
@@ -107,7 +107,7 @@ export const createProduct = () => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await axios.post(`https://clean-trwd.onrender.com/api/products`, {}, config);
+    const { data } = await axios.post(`https://clean-mineral.onrender.com/api/products`, {}, config);
 
     dispatch({
       type: PRODUCT_CREATE_SUCCESS,
@@ -142,7 +142,7 @@ export const updateProduct = (product) => async (dispatch, getState) => {
     };
 
     const { data } = await axios.put(
-      `https://clean-trwd.onrender.com/api/products/${product._id}`,
+      `https://clean-mineral.onrender.com/api/products/${product._id}`,
       product,
       config
     );
