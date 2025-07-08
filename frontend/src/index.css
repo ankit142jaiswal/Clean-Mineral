@@ -68,7 +68,6 @@ code {
   padding: 16px;
 }
 
-<<<<<<< HEAD
 .table tbody tr:hover {
   background-color: #f8fafc;
 }
@@ -77,6 +76,8 @@ code {
 .navbar {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  z-index: 10000 !important;
+  position: relative !important;
 }
 
 .navbar-brand {
@@ -99,79 +100,11 @@ code {
 /* Loading Spinner */
 .spinner-border {
   color: #667eea;
-=======
-.navbar {
-  z-index: 10000 !important;
-  position: relative !important;
-}
-
-/* Reduce loader timing */
-.spinner-border {
   animation-duration: 0.5s !important;
 }
 
 .fade {
   transition: opacity 0.1s !important;
-}
-
-/* Product details page transparency */
-.list-group-item {
-  background-color: transparent !important;
-  border: 1px solid rgba(255, 255, 255, 0.2) !important;
-}
-
-.card {
-  background: rgba(255, 255, 255, 0.1) !important;
-  backdrop-filter: blur(10px) !important;
-  border: 1px solid rgba(255, 255, 255, 0.2) !important;
-}
-
-/* Payment method transparent boxes */
-.form-check {
-  background: rgba(255, 255, 255, 0.1) !important;
-  backdrop-filter: blur(10px) !important;
-  border: 1px solid rgba(255, 255, 255, 0.2) !important;
-  border-radius: 10px !important;
-  padding: 15px !important;
-  margin: 10px 0 !important;
-  transition: all 0.3s ease !important;
-  display: flex !important;
-  align-items: center !important;
-}
-
-.form-check:hover {
-  background: rgba(255, 255, 255, 0.2) !important;
-  transform: translateY(-2px) !important;
-}
-
-.form-check-input {
-  margin-right: 10px !important;
-  margin-top: 0 !important;
-}
-
-.form-check-label {
-  margin-bottom: 0 !important;
-  cursor: pointer !important;
-}
-
-/* Shipping form transparent container */
-.shipping-form-container {
-  background: rgba(255, 255, 255, 0.1) !important;
-  backdrop-filter: blur(10px) !important;
-  border: 1px solid rgba(255, 255, 255, 0.2) !important;
-  border-radius: 15px !important;
-  padding: 30px !important;
-  margin: 20px 0 !important;
-}
-
-/* Payment methods container */
-.payment-methods-container {
-  background: rgba(255, 255, 255, 0.1) !important;
-  backdrop-filter: blur(10px) !important;
-  border: 1px solid rgba(255, 255, 255, 0.2) !important;
-  border-radius: 15px !important;
-  padding: 30px !important;
-  margin: 20px 0 !important;
 }
 
 /* Checkout steps styling */
@@ -180,47 +113,4 @@ code {
   color: #ffffff !important;
   border-radius: 5px !important;
   padding: 8px 16px !important;
-}
-
-/* Order details transparent container */
-.order-details-container {
-  background: rgba(255, 255, 255, 0.1) !important;
-  backdrop-filter: blur(10px) !important;
-  border: 1px solid rgba(255, 255, 255, 0.2) !important;
-  border-radius: 15px !important;
-  padding: 30px !important;
-  margin: 20px 0 !important;
-}
-
-/* Individual order item boxes */
-.order-item-box {
-  background: rgba(255, 255, 255, 0.1) !important;
-  backdrop-filter: blur(10px) !important;
-  border: 1px solid rgba(255, 255, 255, 0.2) !important;
-  border-radius: 10px !important;
-  padding: 15px !important;
-  margin: 10px 0 !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3) !important;
-}
-
-.order-details-container p {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
-  padding-bottom: 10px !important;
-  margin-bottom: 15px !important;
-}
-
-.order-details-container p:last-child {
-  border-bottom: none !important;
-}
-
-/* Order number transparent container */
-.order-number-container {
-  background: rgba(255, 255, 255, 0.1) !important;
-  backdrop-filter: blur(10px) !important;
-  border: 1px solid rgba(255, 255, 255, 0.2) !important;
-  border-radius: 15px !important;
-  padding: 20px !important;
-  margin: 20px 0 !important;
-  text-align: left !important;
->>>>>>> 73d49a28b14c7439f969eee1d24acd9ed4364b96
 }
