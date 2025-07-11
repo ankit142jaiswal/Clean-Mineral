@@ -107,6 +107,15 @@ code {
   transition: opacity 0.1s !important;
 }
 
+/* Product detail page image responsive */
+.product-image {
+  width: 100% !important;
+  height: auto !important;
+  max-height: 70vh !important;
+  object-fit: contain !important;
+  border-radius: 15px !important;
+}
+
 /* Checkout steps styling */
 .current-step {
   background-color: #000000 !important;

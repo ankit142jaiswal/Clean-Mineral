@@ -47,6 +47,7 @@ const ProductScreen = () => {
               src={product.image?.startsWith('http') ? product.image : `https://clean-mineral.onrender.com${product.image}`} 
               alt={product.name} 
               fluid 
+              className="product-image"
               onError={(e) => {
                 e.target.src = '/images/sample.png';
               }}
