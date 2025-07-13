@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { Row, Col, Image, ListGroup, Card, Button, Form } from 'react-bootstrap';
+import { Row, Col, Image, ListGroup, Card, Button, Form, Carousel } from 'react-bootstrap';
 
 import Message from '../components/Message';
 import Loader from '../components/Loader';
@@ -9,6 +9,7 @@ import { listProductDetails } from '../actions/productActions';
 
 const ProductScreen = () => {
   const [qty, setQty] = useState(1);
+  const [selectedImage, setSelectedImage] = useState(0);
   const { id } = useParams();
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -22,6 +23,13 @@ const ProductScreen = () => {
   useEffect(() => {
     dispatch(listProductDetails(id));
   }, [dispatch, id]);
+
+  const productImages = [
+    product.image,
+    '/images/sample.png',
+    '/images/sample.png',
+    '/images/sample.png'
+  ];
 
   const addToCartHandler = () => {
     if (!userInfo) {
@@ -43,15 +51,21 @@ const ProductScreen = () => {
       ) : (
         <Row>
           <Col md={6}>
-            <Image 
-              src={product.image?.startsWith('http') ? product.image : `https://clean-mineral.onrender.com${product.image}`} 
-              alt={product.name} 
-              fluid 
-              className="product-image"
-              onError={(e) => {
-                e.target.src = '/images/sample.png';
-              }}
-            />
+            <Carousel activeIndex={selectedImage} onSelect={(selectedIndex) => setSelectedImage(selectedIndex)} className="product-carousel" controls={false} touch={true}>
+              {productImages.map((img, index) => (
+                <Carousel.Item key={index}>
+                  <Image 
+                    src={img?.startsWith('http') ? img : `https://clean-mineral.onrender.com${img}`} 
+                    alt={`${product.name} ${index + 1}`} 
+                    fluid 
+                    className="product-image"
+                    onError={(e) => {
+                      e.target.src = '/images/sample.png';
+                    }}
+                  />
+                </Carousel.Item>
+              ))}
+            </Carousel>
           </Col>
           <Col md={3}>
             <div className='p-2 bg-white rounded-3 shadow-sm'>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Table, Button, Modal } from 'react-bootstrap';
+import { Table, Button, Modal, NavDropdown } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
@@ -12,6 +12,7 @@ const NotificationsScreen = () => {
   const [error, setError] = useState(null);
   const [showPopup, setShowPopup] = useState(false);
   const [newNotification, setNewNotification] = useState(null);
+  const [dateFilter, setDateFilter] = useState('');
   
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -93,6 +94,30 @@ const NotificationsScreen = () => {
     setShowPopup(false);
   };
 
+  const filterNotifications = (notifications) => {
+    if (!notifications) return [];
+    
+    return notifications.filter(notification => {
+      const notificationDate = new Date(notification.createdAt);
+      const now = new Date();
+      
+      if (dateFilter === 'last30days') {
+        const thirtyDaysAgo = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000);
+        if (notificationDate < thirtyDaysAgo) return false;
+      } else if (dateFilter === 'last3months') {
+        const threeMonthsAgo = new Date(now.getFullYear(), now.getMonth() - 3, now.getDate());
+        if (notificationDate < threeMonthsAgo) return false;
+      } else if (dateFilter && dateFilter.startsWith('year-')) {
+        const year = parseInt(dateFilter.split('-')[1]);
+        if (notificationDate.getFullYear() !== year) return false;
+      }
+      
+      return true;
+    });
+  };
+
+  const filteredNotifications = filterNotifications(notifications);
+
   return (
     <>
       <h1>Notifications</h1>
@@ -108,7 +133,15 @@ const NotificationsScreen = () => {
             <Table striped bordered hover responsive className='table-sm'>
               <thead>
                 <tr>
-                  <th>DATE</th>
+                  <th>
+                    <NavDropdown title={dateFilter ? (dateFilter === 'last30days' ? 'Last 30 Days' : dateFilter === 'last3months' ? 'Last 3 Months' : dateFilter === 'year-2024' ? '2024' : '2023') : 'DATE'} id='date-dropdown' className='fw-bold'>
+                      <NavDropdown.Item onClick={() => setDateFilter('')}>All Dates</NavDropdown.Item>
+                      <NavDropdown.Item onClick={() => setDateFilter('last30days')}>Last 30 Days</NavDropdown.Item>
+                      <NavDropdown.Item onClick={() => setDateFilter('last3months')}>Last 3 Months</NavDropdown.Item>
+                      <NavDropdown.Item onClick={() => setDateFilter('year-2024')}>2024</NavDropdown.Item>
+                      <NavDropdown.Item onClick={() => setDateFilter('year-2023')}>2023</NavDropdown.Item>
+                    </NavDropdown>
+                  </th>
                   <th>CUSTOMER</th>
                   <th>TOTAL</th>
                   <th>NOTIFICATION</th>
@@ -116,7 +149,7 @@ const NotificationsScreen = () => {
                 </tr>
               </thead>
               <tbody>
-                {notifications.map((notification) => (
+                {filteredNotifications.map((notification) => (
                   <tr key={notification._id}>
                     <td>{new Date(notification.createdAt).toLocaleDateString()}</td>
                     <td>{notification.user?.name || 'Unknown User'}</td>

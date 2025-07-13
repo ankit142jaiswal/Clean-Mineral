@@ -82,7 +82,7 @@ const DashboardScreen = () => {
       {/* Statistics Cards */}
       <Row className='mb-4'>
         <Col md={4}>
-          <Card className='my-3 p-3 rounded bg-dark text-dark' style={{ cursor: 'pointer' }} onClick={() => navigate('/admin/userlist')}>
+          <Card className='my-3 p-3 rounded text-dark' style={{ cursor: 'pointer', background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', border: '1px solid rgba(255, 255, 255, 0.3)' }} onClick={() => navigate('/admin/userlist')}>
             <Card.Body className='text-center'>
               <h3>{stats.totalUsers}</h3>
               <Card.Title>Total Users</Card.Title>
@@ -91,7 +91,7 @@ const DashboardScreen = () => {
           </Card>
         </Col>
         <Col md={4}>
-          <Card className='my-3 p-3 rounded bg-primary text-dark' style={{ cursor: 'pointer' }} onClick={() => navigate('/admin/orderlist')}>
+          <Card className='my-3 p-3 rounded text-dark' style={{ cursor: 'pointer', background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', border: '1px solid rgba(255, 255, 255, 0.3)' }} onClick={() => navigate('/admin/orderlist')}>
             <Card.Body className='text-center'>
               <h3>{stats.totalOrders}</h3>
               <Card.Title>Total Orders</Card.Title>
@@ -100,7 +100,7 @@ const DashboardScreen = () => {
           </Card>
         </Col>
         <Col md={4}>
-          <Card className='my-3 p-3 rounded bg-success text-dark' style={{ cursor: 'pointer' }} onClick={() => navigate('/admin/orderlist')}>
+          <Card className='my-3 p-3 rounded text-dark' style={{ cursor: 'pointer', background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', border: '1px solid rgba(255, 255, 255, 0.3)' }} onClick={() => navigate('/admin/orderlist')}>
             <Card.Body className='text-center'>
               <h3>{stats.deliveredOrders}</h3>
               <Card.Title>Delivered Orders</Card.Title>
@@ -111,7 +111,7 @@ const DashboardScreen = () => {
       </Row>
       <Row className='mb-4'>
         <Col md={4}>
-          <Card className='my-3 p-3 rounded bg-info text-dark' style={{ cursor: 'pointer' }} onClick={() => navigate('/admin/orderlist')}>
+          <Card className='my-3 p-3 rounded text-dark' style={{ cursor: 'pointer', background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', border: '1px solid rgba(255, 255, 255, 0.3)' }} onClick={() => navigate('/admin/orderlist')}>
             <Card.Body className='text-center'>
               <h3>₹{stats.totalRevenue}</h3>
               <Card.Title>Total Revenue</Card.Title>
@@ -120,7 +120,7 @@ const DashboardScreen = () => {
           </Card>
         </Col>
         <Col md={4}>
-          <Card className='my-3 p-3 rounded bg-warning text-dark' style={{ cursor: 'pointer' }} onClick={() => navigate('/admin/productlist')}>
+          <Card className='my-3 p-3 rounded text-dark' style={{ cursor: 'pointer', background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', border: '1px solid rgba(255, 255, 255, 0.3)' }} onClick={() => navigate('/admin/productlist')}>
             <Card.Body className='text-center'>
               <h3>{stats.totalProducts}</h3>
               <Card.Title>Total Products</Card.Title>
@@ -129,7 +129,7 @@ const DashboardScreen = () => {
           </Card>
         </Col>
         <Col md={4}>
-          <Card className='my-3 p-3 rounded bg-secondary text-dark' style={{ cursor: 'pointer' }} onClick={() => navigate('/admin/productlist')}>
+          <Card className='my-3 p-3 rounded text-dark' style={{ cursor: 'pointer', background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', border: '1px solid rgba(255, 255, 255, 0.3)' }} onClick={() => navigate('/admin/productlist')}>
             <Card.Body className='text-center'>
               <h3>{stats.totalStock}</h3>
               <Card.Title>Total Stock</Card.Title>
